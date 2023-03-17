@@ -1,7 +1,7 @@
 <header>
-	<div id="logo">
+	<a id="logo" href="/">
 		<img src="/assets/logo.png" alt="snaber.dev">
-	</div>
+	</a>
 	<div id="ufo">
 		<a href="/secret">
 			<img id="ufo" src="/assets/gif/ufo-guy.gif" alt="UFO guy">
