@@ -17,4 +17,5 @@ SvelteKit.
 
 ## Acknowledgements
 
-- [Internet Archive](https://archive.org/)
+- [svelte-ticker](https://github.com/PaulMaly/svelte-ticker) by [PaulMaly](https://github.com/PaulMaly)
+- [Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
