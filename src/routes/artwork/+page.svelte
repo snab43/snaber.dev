@@ -32,7 +32,8 @@
 
 <h1>+ ARTWORK PLANET +</h1>
 <h2>My Art</h2>
-<p>i've been drawing for as long as i can remember. recently i've been interested in painting. here's a select few pieces from over the years.</p>
+<p>i've been drawing for as long as i can remember. recently i've been interested in painting. below you'll find a select few pieces from over the years.</p>
 
 <h2>Gallery</h2>
+<p><b>note:</b> the gallery may take a second to load on slower internet connections.</p>
 <Carousel {images} height={580} />
