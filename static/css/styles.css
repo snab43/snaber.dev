@@ -23,8 +23,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'VT323', monospace;
 	color: #ffffce;
 	letter-spacing: 0.5px;
+	text-transform: uppercase;
 }
 
+/* Background */
 #background-container {
 	position: fixed;
 	overflow: hidden;
@@ -48,77 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 	}
 }
 
-/* Layout */
-header {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	margin-bottom: 12px;
-}
-
-footer {
-	font-size: 0.8rem;
-	text-align: center;
-	color: #c0c0c0;
-}
-
-#content-container {
-	display: flex;
-}
-
-#content {
-	width: 100%;
-}
-
-#panel {
-	width: fit-content;
-}
-
-@media only screen and (max-width: 500px) {
-	#content-container {
-		flex-direction: column-reverse;
-	}
-
-	#content {
-		max-width: fit-content;
-		margin-right: 0 !important;
-	}
-
-	#panel {
-		width: 100%;
-	}
-}
-
 /* Style */
-#content,
-#panel > *,
-footer {
-	margin-bottom: 12px;
-	padding: 12px;
-	background: repeat-x url("../assets/texture-bg.png") #0b101a;
-	border: 2px solid #1a243c;
-	border-radius: 6px;
-}
-
-#content {
-	margin-right: 12px;
-}
-
-nav > ul {
-	list-style-type: none;
-	padding: 0;
-	margin: 0;
-}
-
-nav > ul > li {
-	display: flex;
-	align-items: center;
-}
-
-nav > ul > li > img {
-	margin-right: 6px;
-}
-
 h1 {
 	margin: 0;
 	text-align: right;
@@ -133,21 +65,18 @@ h2 {
 
 a {
 	color: #ffff00;
+	transition: all 0.3s ease;
 	text-decoration: none;
 }
 
 a:hover {
-	color: #c0c000;
+	color: #ffff88;
+	text-shadow: 0 0 10px #ffffffa2;
+	transition: all 0.3s ease;
 }
 
 img {
 	max-width: 100%;
 	height: auto;
 	width: auto\9; /* ie8 */
-}
-
-.merch-photos {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 }

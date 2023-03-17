@@ -1,8 +1,2 @@
 User-agent: *
-Disallow: /secret/
-Disallow: /secret/index.html
-Disallow: /assets/
-Disallow: /portfolio/
-Disallow: /portfolio/index.html
-
-Sitemap: https://snaber.dev/sitemap.xml
+Disallow: /
