@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 
 	export let images;
+	export let height;
 
 	onMount(() => {
 		let slideIndex = 1;
@@ -33,7 +34,10 @@
 
 <div class="carousel-container">
 	{#each images as image}
-		<div class="image-container">
+		<div
+			class="image-container"
+			style="--image-height: {height}px; --mobile-image-height: {Math.floor(height * 0.7)}px;"
+		>
 			<img src="{image.src}" alt="{image.alt}" />
 			<div class="desc">{image.desc}</div>
 		</div>
@@ -55,7 +59,7 @@
 	}
 
 	.image-container {
-		height: 375px;
+		height: var(--image-height);
 		display: none;
 		text-align: center;
 	}
@@ -80,7 +84,7 @@
 		top: 50%;
 		width: auto;
 		margin-top: -22px;
-		padding: 16px;
+		padding: 12px 10px;
 		color: #ffff00;
 		background-color: #0b101a;
 		font-weight: bold;
@@ -108,7 +112,7 @@
 
 	@media only screen and (max-width: 500px) {
 		.image-container {
-			height: 350px;
+			height: var(--mobile-image-height);
 		}
 	}
 </style>

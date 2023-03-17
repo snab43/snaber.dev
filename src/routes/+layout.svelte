@@ -1,6 +1,6 @@
 <header>
 	<a id="logo" href="/">
-		<img src="/assets/logo.png" alt="snaber.dev">
+		<img src="/assets/logo.gif" alt="snaber.dev">
 	</a>
 	<div id="ufo">
 		<a href="/secret">
@@ -27,9 +27,10 @@
 		<nav class="section">
 			<h2>This Galaxy</h2>
 			<ul>
-				<li><a href="/"><img src="/assets/planet-0.png" alt="">home</a></li>
-				<li><a href="/portfolio"><img src="/assets/planet-1.png" alt="">portfolio</a></li>
-				<li><a href="/sasquatch"><img src="/assets/planet-2.png" alt="">sasquatch</a></li>
+				<li><a href="/"><img src="/assets/planet-home.png" alt="">home</a></li>
+				<li><a href="/portfolio"><img src="/assets/planet-portfolio.png" alt="">portfolio</a></li>
+				<li><a href="/artwork"><img src="/assets/planet-art.png" alt="">artwork</a></li>
+				<li><a href="/sasquatch"><img src="/assets/planet-sasquatch.png" alt="">sasquatch</a></li>
 			</ul>
 		</nav>
 		<nav class="section">
@@ -42,8 +43,8 @@
 	</div>
 </div>
 
-<footer id="footer" class="section">
-	<span id="copyright">Copyright &copy; 2023 snaber.dev. All Rights Reserved.</span>
+<footer class="section">
+	<p>Copyright &copy; 2023 snaber.dev. All Rights Reserved.<br/>Any spelling mistakes are actually just innocent typos.</p>
 </footer>
 
 <div style="text-align: center;">
@@ -62,6 +63,10 @@
 		font-size: 0.8rem;
 		text-align: center;
 		color: #c0c0c0;
+	}
+
+	footer > p {
+		margin: 6px 0;
 	}
 
 	#content-container {

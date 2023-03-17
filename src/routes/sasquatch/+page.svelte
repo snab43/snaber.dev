@@ -59,7 +59,7 @@
 </ul>
 <h2>Photos</h2>
 
-<Carousel {images} />
+<Carousel {images} height={400} />
 
 <style>
 	ul {
