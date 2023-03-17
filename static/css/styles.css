@@ -1,0 +1,153 @@
+/* Main */
+body {
+	font-family: 'Work Sans', sans-serif;
+	margin: 0;
+	color: white;
+	background-color: black;
+	font-size: 0.9rem;
+}
+
+#main {
+	max-width: 860px;
+	margin: auto;
+	padding: 12px;
+}
+
+img {
+	image-rendering: pixelated;
+	image-rendering: -moz-crisp-edges;
+	image-rendering: crisp-edges;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'VT323', monospace;
+	color: #ffffce;
+	letter-spacing: 0.5px;
+}
+
+#background-container {
+	position: fixed;
+	overflow: hidden;
+	z-index: -1000;
+}
+
+#background {
+	background: url("../assets/stars.gif") repeat-x;
+	height: 2048px;
+	width: 6144px;
+	animation: slide 300s linear infinite;
+}
+
+@keyframes slide {
+	0% {
+		transform: translate3d(0, 0, 0);
+	}
+
+	100% {
+		transform: translate3d(-2048px, 0, 0);
+	}
+}
+
+/* Layout */
+header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+footer {
+	font-size: 0.8rem;
+	text-align: center;
+	color: #c0c0c0;
+}
+
+#content-container {
+	display: flex;
+}
+
+#content {
+	width: 100%;
+}
+
+#panel {
+	width: fit-content;
+}
+
+@media only screen and (max-width: 500px) {
+	#content-container {
+		flex-direction: column-reverse;
+	}
+
+	#content {
+		max-width: fit-content;
+		margin-right: 0 !important;
+	}
+
+	#panel {
+		width: 100%;
+	}
+}
+
+/* Style */
+#content,
+#panel > *,
+footer {
+	margin-bottom: 12px;
+	padding: 12px;
+	background: repeat-x url("../assets/texture-bg.png") #0b101a;
+	border: 2px solid #1a243c;
+	border-radius: 6px;
+}
+
+#content {
+	margin-right: 12px;
+}
+
+nav > ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav > ul > li {
+	display: flex;
+	align-items: center;
+}
+
+nav > ul > li > img {
+	margin-right: 6px;
+}
+
+h1 {
+	margin: 0;
+	text-align: right;
+	color: #ff0000;
+	letter-spacing: 1px;
+}
+
+h2 {
+	margin-top: 0;
+	margin-bottom: 6px;
+}
+
+a {
+	color: #ffff00;
+	text-decoration: none;
+}
+
+a:hover {
+	color: #c0c000;
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	width: auto\9; /* ie8 */
+}
+
+.merch-photos {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
