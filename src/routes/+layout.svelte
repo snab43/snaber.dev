@@ -130,8 +130,17 @@
 			width: 100%;
 		}
 
+		#panel h2 {
+			margin-bottom: 0;
+		}
+
 		#panel ul {
 			display: flex;
+			flex-flow: wrap;
+		}
+
+		#panel li {
+			margin-top: 8px;
 		}
 
 		#panel ul li:not(:last-child) {
