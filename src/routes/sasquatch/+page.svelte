@@ -54,7 +54,7 @@
 	<li>Scream Squash</li>
 	<li>Sassafrass</li>
 	<li>Sassy Poo</li>
-	<li>Clincally Insane</li>
+	<li>A Menace to Society</li>
 	<li>Baby Girl</li>
 </ul>
 <h2>Photos</h2>

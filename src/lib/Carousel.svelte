@@ -50,7 +50,8 @@
 		margin: auto;
 		background-color: black;
 		border-radius: 6px;
-		border: 2px solid #7b88a8;
+		overflow: hidden;
+		box-shadow: 0 0 10px black;
 	}
 
 	.image-container {
@@ -80,12 +81,13 @@
 		width: auto;
 		margin-top: -22px;
 		padding: 16px;
-		color: white;
+		color: #ffff00;
 		background-color: #0b101a;
 		font-weight: bold;
 		font-size: 18px;
-		border: 2px solid #7b88a8;
+		border: 2px solid #1e335c;
 		user-select: none;
+		transition: background-color 0.3s ease;
 	}
 
 	#prev {
@@ -100,6 +102,13 @@
 	}
 
 	#prev:hover, #next:hover {
-		background-color: rgba(0,0,0,0.8);
+		background-color: #182644;
+		transition: background-color 0.3s ease;
+	}
+
+	@media only screen and (max-width: 500px) {
+		.image-container {
+			height: 350px;
+		}
 	}
 </style>
