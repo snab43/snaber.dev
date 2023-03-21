@@ -52,7 +52,7 @@
 			<h2>This Galaxy</h2>
 			<ul>
 				<li><a href="/"><img src="/assets/planet-home.png" alt="">home</a></li>
-				<li><a href="/portfolio"><img src="/assets/planet-portfolio.png" alt="">portfolio &#9888;</a></li>
+				<li><a href="/blog"><img src="/assets/planet-blog.png" alt="">blog</a></li>
 				<li><a href="/artwork"><img src="/assets/planet-art.png" alt="">artwork</a></li>
 				<li><a href="/sasquatch"><img src="/assets/planet-sasquatch.png" alt="">sasquatch</a></li>
 			</ul>

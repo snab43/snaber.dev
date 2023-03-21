@@ -20,12 +20,6 @@
 		color: #ff8686;
 	}
 
-	.star-row {
-		height: 20px;
-		margin: 20px 0;
-		background: url('/assets/gif/star-row.gif') repeat-x;
-	}
-
 	.rainbow span:nth-child(10n + 1) {
 		color: #ef5350;
 	}
