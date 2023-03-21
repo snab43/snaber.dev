@@ -56,7 +56,7 @@
 	{#if success}
 		<span>thank you for your submission!</span>
 	{:else}
-		<form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+		<form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify="true">
 			<input type="hidden" name="form-name" value="guestbook" />
 			<div class="form-input hidden">
 				<label for="bot-field">Do not fill this out if you're human</label>
@@ -70,7 +70,6 @@
 				<label for="message">Your Message</label>
 				<textarea maxlength="500" name="message" required />
 			</div>
-			<div data-netlify-recaptcha="true"></div>
 			{#if submitting}
 				<div>Submitting...</div>
 			{:else}
