@@ -48,11 +48,11 @@
 	</div>
 	<div class="form-input">
 		<label for="name">Your Name</label>
-		<input type="text" name="name" />
+		<input type="text" name="name" required />
 	</div>
 	<div class="form-input">
 		<label for="message">Your Message</label>
-		<textarea maxlength="500" name="message" />
+		<textarea maxlength="500" name="message" required />
 	</div>
 	<div data-netlify-recaptcha="true"></div>
 	<button type="submit">Post</button>
