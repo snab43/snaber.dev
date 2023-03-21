@@ -35,17 +35,16 @@
 			.addEventListener("submit", handleSubmit);
 
 		// Get submissions
-		/*
-		fetch("https://api.netlify.com/api/v1/forms/641a1fe6cb18cd0008964769/submissions")
+		fetch("https://api.netlify.com/api/v1/sites/ee3d2749-d654-4452-854e-17fff2977220/submissions")
 		.then(response => response.json())
 		.then(data => {
 			console.log(data);
 			apiData.set(data);
-		}).catch(error => {
+		})
+		.catch(error => {
 			console.log(error);
 			return [];
 		});
-		*/
 	});
 </script>
 
