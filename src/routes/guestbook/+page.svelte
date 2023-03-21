@@ -1,6 +1,9 @@
 <script>
 	import { onMount } from "svelte";
 
+	let submitting = false;
+	let success = false;
+
 	onMount(async () => {
 		// AJAX Submit
 		const handleSubmit = (event) => {
@@ -8,14 +11,23 @@
 
 			const myForm = event.target;
 			const formData = new FormData(myForm);
+			submitting = true;
 			
-			fetch("/", {
+			fetch("/guestbook", {
 				method: "POST",
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
 				body: new URLSearchParams(formData).toString(),
 			})
-				.then(() => console.log("Form successfully submitted"))
-				.catch((error) => alert(error));
+			.then(() => {
+				console.log("Form successfully submitted");
+				success = true;
+				submitting = false;
+				myForm.reset();
+			})
+			.catch((error) => {
+				alert(error);
+				submitting = false;
+			});
 		};
 
 		document
@@ -40,26 +52,36 @@
 <h1>+ Guestbook Planet +</h1>
 <h2>Sign the Galaxybook</h2>
 
-<form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
-	<input type="hidden" name="form-name" value="guestbook" />
-	<div class="form-input hidden">
-		<label for="bot-field">Do not fill this out if you're human</label>
-		<input name="bot-field" />
-	</div>
-	<div class="form-input">
-		<label for="name">Your Name</label>
-		<input type="text" name="name" required />
-	</div>
-	<div class="form-input">
-		<label for="message">Your Message</label>
-		<textarea maxlength="500" name="message" required />
-	</div>
-	<div data-netlify-recaptcha="true"></div>
-	<button type="submit">Post</button>
-</form>
+<div class="form-container">
+	{#if success}
+		<span>thank you for your submission!</span>
+	{:else}
+		<form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+			<input type="hidden" name="form-name" value="guestbook" />
+			<div class="form-input hidden">
+				<label for="bot-field">Do not fill this out if you're human</label>
+				<input name="bot-field" />
+			</div>
+			<div class="form-input">
+				<label for="name">Your Name</label>
+				<input type="text" name="name" required />
+			</div>
+			<div class="form-input">
+				<label for="message">Your Message</label>
+				<textarea maxlength="500" name="message" required />
+			</div>
+			<div data-netlify-recaptcha="true"></div>
+			{#if submitting}
+				<div>Submitting...</div>
+			{:else}
+				<button type="submit">Post</button>
+			{/if}
+		</form>
+	{/if}
+</div>
 
 <style>
-	form {
+	.form-container {
 		padding: 12px;
 		background-color: #1b2740;
 		border-radius: 6px;
