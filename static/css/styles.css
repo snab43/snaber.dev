@@ -86,6 +86,10 @@ img {
 }
 
 /* Universal */
+.hidden {
+	display: none !important;
+}
+
 .star-row {
 	height: 20px;
 	margin: 20px 0;
