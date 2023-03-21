@@ -41,6 +41,7 @@
 <h2>Sign the Galaxybook</h2>
 
 <form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify-recaptcha="true" data-netlify="true">
+	<input type="hidden" name="form-name" value="guestbook" />
 	<div class="form-input hidden">
 		<label for="bot-field">Do not fill this out if you're human</label>
 		<input name="bot-field" />
