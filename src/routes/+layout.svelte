@@ -33,14 +33,8 @@
 			<Navigation />
 		</div>
 
-		<div class="section">
-			<Radio />
-		</div>
-
-		<div class="section">
-			<Game />
-		</div>
-
+		<Radio />
+		
 	</div>
 	
 </div>
@@ -88,10 +82,6 @@
 	#content {
 		margin-right: 12px;
 		width: 100%;
-	}
-
-	#sidebar {
-		min-width: 180px;
 	}
 
 	.section {

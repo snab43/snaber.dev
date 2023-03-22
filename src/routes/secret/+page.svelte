@@ -2,8 +2,8 @@
 <h2>You Did It!</h2>
 <p>wow! congrats you found the secret planet. stick around and listen to the ambiance for a minute. you look like you could use a break.</p>
 <audio controls autoplay loop>
-	<source src="/assets/secret.ogg" type="audio/ogg">
-	<source src="/assets/secret.mp3" type="audio/mpeg">
+	<source src="/assets/audio/secret.ogg" type="audio/ogg">
+	<source src="/assets/audio/secret.mp3" type="audio/mpeg">
 	Your browser does not support the audio element.
 </audio>
 
