@@ -84,6 +84,8 @@
 	{/if}
 </div>
 
+<div class="star-row"></div>
+
 <h2>Galaxybook Transmissions</h2>
 <p><em><strong>note:</strong> the transmissions below are not reflective of the views of the site owner.</em></p>
 {#if data.posts}
@@ -91,7 +93,7 @@
 		{#each Object.values(data.posts) as post}
 			<li class="post">
 				<div class="post-header">
-					<span>{post.name}</span>
+					<span>&#62;{post.name}</span>
 					<span>{formatDate(post.date)}</span>
 				</div>
 				<div class="post-body">{post.message}</div>
@@ -137,9 +139,10 @@
 	}
 
 	button {
-		background-color: #ffff00;
+		color: #ffff00;
+		background-color: rgb(0, 0, 0);
 		border: none;
-		padding: 6px 18px;
+		padding: 10px 18px;
 		border-radius: 6px;
 		font-weight: 700;
 		text-transform: uppercase;
@@ -148,8 +151,9 @@
 	}
 
 	button:hover {
-		background-color: #ffff85;
-		box-shadow: 0px 0px 10px #ffff0071;
+		color: #ffff85;
+		background-color: rgb(20, 20, 20);
+		box-shadow: 0px 0px 10px #ffff0046;
 		transition: all 0.3s ease;
 	}
 
@@ -161,10 +165,25 @@
 
 	.post {
 		border-radius: 6px;
-		background-color: black;
+		background-color: rgb(0, 0, 0);
 		padding: 12px;
+		box-shadow: 0px 0px 8px rgba(142, 199, 142, 0.1), 0px 0px 2px rgba(82, 218, 82, 0.1);
 		transition: box-shadow 1s ease;
+		position: relative;
 		overflow: hidden;
+	}
+
+	.post::before {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		content: "";
+		background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.1));
+		z-index: 2;
+		background-size: 100% 3px, 2px 100%;
+		pointer-events: none;
 	}
 
 	.post:hover {
@@ -183,11 +202,11 @@
 		font-size: 18px;
 		display: flex;
 		justify-content: space-between;
-		color: rgb(0, 128, 0);
+		color: rgb(26, 241, 26);
 		margin-bottom: 3px;
 	}
 
 	.post-body {
-		color: rgb(166, 221, 166);
+		color: rgb(187, 255, 187);
 	}
 </style>
