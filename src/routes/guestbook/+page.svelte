@@ -5,22 +5,8 @@
 
 	let submitting = false;
 	let success = false;
-	let posts = [];
-	let retrievedPosts = false;
 
 	onMount(async () => {
-		fetch("https://api.netlify.com/api/v1/forms/641a1fe6cb18cd0008964769/submissions/", {
-			headers: {Authorization: 'Bearer ' + data.GUESTBOOK_API_KEY}
-		})
-		.then((response) => response.json())
-		.then((data) => {
-			retrievedPosts = true;
-			posts = data;
-		})
-		.catch(error => {
-			console.log(error);
-		});
-
 		// AJAX Submit
 		const handleSubmit = (event) => {
 			event.preventDefault();
@@ -87,15 +73,15 @@
 </div>
 
 <h2>Galaxybook Posts</h2>
-{#if retrievedPosts}
+{#if data.posts}
 	<ul>
-		{#each Object.values(posts) as post}
+		{#each Object.values(data.posts) as post}
 			<li class="post">
 				<div class="post-header">
-					<div class="post-name">{post.data.name}</div>
-					<div class="post-date">{formatDate(post.created_at)}</div>
+					<div class="post-name">{post.name}</div>
+					<div class="post-date">{formatDate(post.date)}</div>
 				</div>
-				<div class="post-body">{post.data.message}</div>
+				<div class="post-body">{post.message}</div>
 			</li>
 		{/each}
 	</ul>
