@@ -100,12 +100,12 @@
 		background: repeat-x url("../assets/texture-bg.png") #0b101a;
 		border: 2px solid #3b4866;
 		border-radius: 6px;
-		transition: box-shadow 0.3s ease;
+		transition: box-shadow 1s ease;
 	}
 
 	.section:hover {
 		box-shadow: 0 0 30px 5px rgba(208, 211, 219, 0.089), 0 0 3px 2px #234fb654;
-		transition: box-shadow 0.3s ease;
+		transition: box-shadow 0.2s ease;
 	}
 
 	@media only screen and (max-width: 500px) {

@@ -33,6 +33,16 @@
 		};
 
 		document.querySelector("form").addEventListener("submit", handleSubmit);
+
+		// Character limit
+		document.querySelector("textarea").addEventListener("input", event => {
+			const target = event.currentTarget;
+			const maxLength = target.getAttribute("maxlength");
+			const currentLength = target.value.length;
+
+			const charLimit = document.querySelector("#charLimit");
+			charLimit.textContent = `${currentLength} / ${maxLength}`;
+		});
 	});
 
 	function formatDate(date) {
@@ -44,10 +54,11 @@
 
 <h1>+ Guestbook Planet +</h1>
 <h2>Sign the Galaxybook</h2>
+<p>tell us your story! what galaxy are you coming from?</p>
 
 <div class="form-container">
 	{#if success}
-		<span>thank you for your submission!</span>
+		<span>thank you for your transmission!</span>
 	{:else}
 		<form name="guestbook" method="POST" netlify-honeypot="bot-field" data-netlify="true">
 			<input type="hidden" name="form-name" value="guestbook" />
@@ -61,18 +72,20 @@
 			</div>
 			<div class="form-input">
 				<label for="message">Your Message</label>
-				<textarea maxlength="500" name="message" required />
+				<textarea rows="4" maxlength="500" name="message" required />
+				<span id="charLimit">0 / 500</span>
 			</div>
 			{#if submitting}
 				<div>Submitting...</div>
 			{:else}
-				<button type="submit">Post</button>
+				<button type="submit">Send Transmission</button>
 			{/if}
 		</form>
 	{/if}
 </div>
 
-<h2>Galaxybook Posts</h2>
+<h2>Galaxybook Transmissions</h2>
+<p><em><strong>note:</strong> the transmissions below are not reflective of the views of the site owner.</em></p>
 {#if data.posts}
 	<ul>
 		{#each Object.values(data.posts) as post}
@@ -111,6 +124,12 @@
 		resize: none;
 	}
 
+	#charLimit {
+		color: white;
+		text-align: right;
+		padding-top: 6px;
+	}
+
 	input, textarea {
 		border-radius: 6px;
 		border: none;
@@ -140,23 +159,38 @@
 		list-style-type: none;
 	}
 
-	li {
-		padding: 12px;
-		background-color: #1b2740;
+	.post {
 		border-radius: 6px;
+		background-color: black;
+		padding: 12px;
+		transition: box-shadow 1s ease;
 	}
 
-	li:not(:last-child) {
+	.post:hover {
+		box-shadow: 0px 0px 14px rgba(142, 199, 142, 0.3), 0px 0px 4px rgba(82, 218, 82, 0.5);
+		transition: box-shadow 0.2s ease;
+	}
+
+	.post:not(:last-child) {
 		margin-bottom: 12px;
 	}
 
 	.post-header {
+		font-family: 'VT323', monospace;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+		font-size: 1.1rem;
 		display: flex;
 		justify-content: space-between;
-		margin-bottom: 6px;
+		color: rgb(0, 128, 0);
+		margin-bottom: 3px;
 	}
 
 	.post-name {
 		font-weight: 700;
+	}
+
+	.post-body {
+		color: rgb(166, 221, 166);
 	}
 </style>
