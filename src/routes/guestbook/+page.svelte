@@ -1,10 +1,26 @@
 <script>
 	import { onMount } from "svelte";
 
+	export let data;
+
 	let submitting = false;
 	let success = false;
+	let posts = [];
+	let retrievedPosts = false;
 
 	onMount(async () => {
+		fetch("https://api.netlify.com/api/v1/forms/641a1fe6cb18cd0008964769/submissions/", {
+			headers: {Authorization: 'Bearer ' + data.GUESTBOOK_API_KEY}
+		})
+		.then((response) => response.json())
+		.then((data) => {
+			retrievedPosts = true;
+			posts = data;
+		})
+		.catch(error => {
+			console.log(error);
+		});
+
 		// AJAX Submit
 		const handleSubmit = (event) => {
 			event.preventDefault();
@@ -30,22 +46,14 @@
 			});
 		};
 
-		document
-			.querySelector("form")
-			.addEventListener("submit", handleSubmit);
-
-		// Get submissions
-		fetch("https://api.netlify.com/api/v1/sites/ee3d2749-d654-4452-854e-17fff2977220/submissions")
-		.then(response => response.json())
-		.then(data => {
-			console.log(data);
-			apiData.set(data);
-		})
-		.catch(error => {
-			console.log(error);
-			return [];
-		});
+		document.querySelector("form").addEventListener("submit", handleSubmit);
 	});
+
+	function formatDate(date) {
+		let d = new Date(date);
+
+		return d.toLocaleString("en-US");
+	}
 </script>
 
 <h1>+ Guestbook Planet +</h1>
@@ -78,8 +86,26 @@
 	{/if}
 </div>
 
+<h2>Galaxybook Posts</h2>
+{#if retrievedPosts}
+	<ul>
+		{#each Object.values(posts) as post}
+			<li class="post">
+				<div class="post-header">
+					<div class="post-name">{post.data.name}</div>
+					<div class="post-date">{formatDate(post.created_at)}</div>
+				</div>
+				<div class="post-body">{post.data.message}</div>
+			</li>
+		{/each}
+	</ul>
+{:else}
+	<p>Getting posts...</p>
+{/if}
+
 <style>
 	.form-container {
+		margin-bottom: 20px;
 		padding: 12px;
 		background-color: #1b2740;
 		border-radius: 6px;
@@ -120,5 +146,31 @@
 		background-color: #ffff85;
 		box-shadow: 0px 0px 10px #ffff0071;
 		transition: all 0.3s ease;
+	}
+
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
+
+	li {
+		padding: 12px;
+		background-color: #1b2740;
+		border-radius: 6px;
+	}
+
+	li:not(:last-child) {
+		margin-bottom: 12px;
+	}
+
+	.post-header {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 6px;
+	}
+
+	.post-name {
+		font-weight: 700;
 	}
 </style>
