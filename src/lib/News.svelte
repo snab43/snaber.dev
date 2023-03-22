@@ -51,7 +51,7 @@
 
 	#ticker-container span {
 		text-transform: uppercase;
-		font-size: 0.8rem;
+		font-size: 12px;
 		margin-right: 40px;
 	}
 </style>

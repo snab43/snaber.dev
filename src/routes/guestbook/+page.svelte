@@ -91,8 +91,8 @@
 		{#each Object.values(data.posts) as post}
 			<li class="post">
 				<div class="post-header">
-					<div class="post-name">{post.name}</div>
-					<div class="post-date">{formatDate(post.date)}</div>
+					<span>{post.name}</span>
+					<span>{formatDate(post.date)}</span>
 				</div>
 				<div class="post-body">{post.message}</div>
 			</li>
@@ -164,6 +164,7 @@
 		background-color: black;
 		padding: 12px;
 		transition: box-shadow 1s ease;
+		overflow: hidden;
 	}
 
 	.post:hover {
@@ -177,17 +178,13 @@
 
 	.post-header {
 		font-family: 'VT323', monospace;
-		letter-spacing: 0.5px;
+		letter-spacing: 1px;
 		text-transform: uppercase;
-		font-size: 1.1rem;
+		font-size: 18px;
 		display: flex;
 		justify-content: space-between;
 		color: rgb(0, 128, 0);
 		margin-bottom: 3px;
-	}
-
-	.post-name {
-		font-weight: 700;
 	}
 
 	.post-body {

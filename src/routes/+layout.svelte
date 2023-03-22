@@ -72,7 +72,7 @@
 	}
 
 	footer {
-		font-size: 0.8rem;
+		font-size: 12px;
 		text-align: center;
 		color: #c0c0c0;
 	}

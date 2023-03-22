@@ -21,7 +21,7 @@
 		flex-wrap: wrap;
 		align-items: center;
 		justify-content: center;
-		font-size: 0.8rem;
+		font-size: 12px;
 		margin-bottom: -8px;
 		margin-right: -8px;
 	}
