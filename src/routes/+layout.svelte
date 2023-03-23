@@ -21,10 +21,11 @@
 	<!-- Main Content -->
 	<div id="content">
 
-		<!-- Breadcrumbs -->
+		<!-- Breadcrumbs
 		<div class="section">
 			<Breadcrumb />
 		</div>
+		 -->
 
 		<div class="section">
 			<slot></slot>
