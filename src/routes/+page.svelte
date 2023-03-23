@@ -1,7 +1,7 @@
 <h1>+ HOME PLANET +</h1>
 
 <h2>Welcome to snaber's galaxy!</h2>
-<p>i'm a <strong>web developer</strong>, an <strong>artist</strong>, and this is my <strong class="rainbow"><span>g</span><span>a</span><span>l</span><span>a</span><span>x</span><span>y</span><span>!</span></strong></p>
+<p>i'm a <strong>web developer</strong>, a <strong>musician</strong>, an <strong>artist</strong>, and this is my <strong class="rainbow"><span>g</span><span>a</span><span>l</span><span>a</span><span>x</span><span>y</span><span>!</span></strong></p>
 <p>it's inspired by the internet i grew up on. it's an ode to all the websites i wrote in notepad.exe as a kid, but with modern tools like SvelteKit <i>(you can see the source code <a href="https://github.com/snab43/snaber.dev" target="_blank">on GitHub</a>)</i>. i made all the art, too.</p>
 <p>i also have a cat named sasquatch who lives on <a href="/sasquatch">planet sasquatch</a>.</p>
 

@@ -1,5 +1,5 @@
 <script>
-	import Carousel from '../../lib/Carousel.svelte';
+	import Carousel from '$lib/Carousel.svelte';
 
 	const images = [
 		{

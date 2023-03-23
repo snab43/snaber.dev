@@ -1,8 +1,8 @@
 <script>
-	import Navigation from '../lib/Navigation.svelte';
-	import Radio from '../lib/Radio.svelte';
-	import Game from '../lib/Game.svelte';
-	import News from '../lib/News.svelte';
+	import Breadcrumb from '$lib/Breadcrumb.svelte';
+	import Navigation from '$lib/Navigation.svelte';
+	import Radio from '$lib/Radio.svelte';
+	import News from '$lib/News.svelte';
 </script>
 
 <!-- Header -->
@@ -15,14 +15,20 @@
 	</a>
 </header>
 
-<!-- Breadcrumbs -->
-
 <!-- Content Area -->
 <div id="content-container">
 
 	<!-- Main Content -->
-	<div id="content" class="section">
-		<slot></slot>
+	<div id="content">
+
+		<!-- Breadcrumbs -->
+		<div class="section">
+			<Breadcrumb />
+		</div>
+
+		<div class="section">
+			<slot></slot>
+		</div>
 	</div>
 
 	<!-- Sidebar Content -->
@@ -81,6 +87,7 @@
 
 	#content {
 		margin-right: 12px;
+		height: 100%;
 		width: 100%;
 	}
 
