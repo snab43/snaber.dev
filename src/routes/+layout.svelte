@@ -1,5 +1,4 @@
 <script>
-	import Breadcrumb from '$lib/Breadcrumb.svelte';
 	import Navigation from '$lib/Navigation.svelte';
 	import Radio from '$lib/Radio.svelte';
 	import News from '$lib/News.svelte';
@@ -11,7 +10,7 @@
 		<img src="/assets/logo.gif" alt="snaber.dev">
 	</a>
 	<a id="ufo" href="/secret">
-		<img src="/assets/gif/ufo-guy.gif" alt="UFO guy">
+		<img src="/assets/ufo-guy.gif" alt="UFO guy">
 	</a>
 </header>
 
@@ -20,13 +19,6 @@
 
 	<!-- Main Content -->
 	<div id="content">
-
-		<!-- Breadcrumbs
-		<div class="section">
-			<Breadcrumb />
-		</div>
-		 -->
-
 		<div class="section">
 			<slot></slot>
 		</div>
@@ -57,7 +49,7 @@
 		<p>Copyright &copy; 2023 snaber.dev. All Rights Reserved.<br/>Any spelling mistakes are actually just innocent typos.</p>
 	</div>
 
-	<img src="/assets/gif/astronaut.gif" alt="Astronaut">
+	<img src="/assets/astronaut.gif" alt="Astronaut">
 </footer>
 
 <style>

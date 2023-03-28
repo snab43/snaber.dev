@@ -31,7 +31,7 @@
 		return array;
 	}
 
-	shuffle(ticker);
+	ticker = shuffle(ticker);
 </script>
 
 <!-- News Ticker -->

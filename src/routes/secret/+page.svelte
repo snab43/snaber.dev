@@ -1,11 +1,6 @@
 <h1>+ SECRET PLANET +</h1>
 <h2>You Did It!</h2>
 <p>wow! congrats you found the secret planet. stick around and listen to the ambiance for a minute. you look like you could use a break.</p>
-<audio controls autoplay loop>
-	<source src="/assets/audio/secret.ogg" type="audio/ogg">
-	<source src="/assets/audio/secret.mp3" type="audio/mpeg">
-	Your browser does not support the audio element.
-</audio>
 
 <h2>How Special Are You?</h2>
 <p>this many people have discovered this planet so far. please keep it a secret, though. there are not enough seats to accommodate a large crowd.</p>
@@ -15,10 +10,3 @@
 		<img src='https://www.free-website-hit-counter.com/c.php?d=7&id=147597&s=1' border='0' alt='Free Website Hit Counter'>
 	</a>
 </div>
-
-<style>
-	audio {
-		width: 100%;
-		margin-bottom: 12px;
-	}
-</style>
