@@ -9,13 +9,14 @@ See it here: https://snaber.dev
 
 ## About
 
-This is a WIP personal website. It's built with [SvelteKit](https://kit.svelte.dev/) and deployed using [Netlify](https://www.netlify.com/).
+It's built with [SvelteKit](https://kit.svelte.dev/) and deployed using [Netlify](https://www.netlify.com/). I made all the music and art for this site.
 
 ## Built With
 
-SvelteKit.
+SvelteKit, Netlify, Netlify Forms.
 
 ## Acknowledgements
 
 - [svelte-ticker](https://github.com/PaulMaly/svelte-ticker) by [PaulMaly](https://github.com/PaulMaly)
 - [Fisher–Yates shuffle](https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle)
+- [Netlify Forms](https://www.netlify.com/products/forms/)
