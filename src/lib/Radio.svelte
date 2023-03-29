@@ -87,7 +87,7 @@
 
 <style>
 	.radio-container {
-		width: 158px;
+		min-width: 152px;
 		margin-bottom: 12px;
 		border: 12px solid;
 		border-image: url("/assets/radio-grid.png") 12;
