@@ -7,6 +7,8 @@
 	let success = false;
 
 	onMount(async () => {
+		load();
+
 		// AJAX Submit
 		const handleSubmit = (event) => {
 			event.preventDefault();
