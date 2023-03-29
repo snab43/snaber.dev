@@ -8,6 +8,8 @@ export async function load() {
 		})
 		.then((response) => response.json())
 		.then((data) => {
+			console.log("Data loaded");
+			console.log(data);
 			return data;
 		})
 		.catch(error => {
