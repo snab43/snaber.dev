@@ -90,9 +90,11 @@
 
 <h2>Galaxybook Transmissions</h2>
 <p><em><strong>note:</strong> the transmissions below are not reflective of the views of the site owner.</em></p>
-{#if data.posts}
+{#await data.streamed.posts}
+	<p>Getting posts...</p>
+{:then value}
 	<ul>
-		{#each Object.values(data.posts) as post}
+		{#each value as post}
 			<li class="post">
 				<div class="post-header">
 					<span>&#62;{post.name}</span>
@@ -102,9 +104,7 @@
 			</li>
 		{/each}
 	</ul>
-{:else}
-	<p>Getting posts...</p>
-{/if}
+{/await}
 
 <style>
 	.form-container {
