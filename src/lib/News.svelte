@@ -1,5 +1,6 @@
 <script>
 	import Ticker from 'svelte-ticker';
+	import { shuffleArray } from "$lib/utils.js";
 
 	let ticker = [
 		"BREAKING: A lion escaped the zoo. Which zoo? We're not sure. Stay tuned!",
@@ -18,20 +19,7 @@
 		"Resident of the Home Planet claims to have discovered a Secret Planet."
 	];
 
-	function shuffle(array) {
-		let currentIndex = array.length, randomIndex;
-
-		while (currentIndex != 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
-
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-		}
-
-		return array;
-	}
-
-	ticker = shuffle(ticker);
+	ticker = shuffleArray(ticker);
 </script>
 
 <!-- News Ticker -->

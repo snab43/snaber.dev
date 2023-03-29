@@ -1,70 +1,61 @@
 <script>
 	import { onMount } from "svelte";
+	import { shuffleArray, getFileFromSrc } from "$lib/utils.js";
 
 	let playing = false;
 	let currentTrack = 0;
-	let playlist = ["/assets/audio/space-01.mp3", "/assets/audio/space-02.mp3", "/assets/audio/space-03.mp3", "/assets/audio/space-04.mp3", "/assets/audio/space-05.mp3"];
+	let playlist = [
+		"/assets/audio/space-01.mp3",
+		"/assets/audio/space-02.mp3",
+		"/assets/audio/space-03.mp3",
+		"/assets/audio/space-04.mp3",
+		"/assets/audio/space-05.mp3"
+	];
 
-	function shuffle(array) {
-		let currentIndex = array.length, randomIndex;
-
-		while (currentIndex != 0) {
-			randomIndex = Math.floor(Math.random() * currentIndex);
-			currentIndex--;
-
-			[array[currentIndex], array[randomIndex]] = [array[randomIndex], array[currentIndex]];
-		}
-
-		return array;
-	}
-
-	function getSongFromSrc(src) {
-		let start = src.lastIndexOf('/');
-		let end = src.lastIndexOf('.');
-		return src.substring(start + 1, end);
-	}
-
-	playlist = shuffle(playlist);
+	playlist = shuffleArray(playlist);
 
 	onMount(async () => {
-		const audio = document.querySelector("#music");
+		const music = document.querySelector("#music");
 		const info = document.querySelector("#radio-info");
 		const play = document.querySelector("#play");
 		const pause = document.querySelector("#pause");
 
-		audio.src = playlist[0];
+		const radioOnSFX = document.querySelector("#radio-on")
+		const radioOffSFX = document.querySelector("#radio-off")
 
-		audio.addEventListener("ended", () => {
+		music.src = playlist[0];
+
+		music.addEventListener("ended", () => {
 			if (currentTrack == (playlist.length - 1)) {
 				currentTrack = 0;
 			} else {
 				currentTrack += 1;
 			}
 
-			audio.pause();
-			audio.src = playlist[currentTrack];
-			info.textContent = `Playing ${getSongFromSrc(audio.src)}`;
-			audio.load();
-			audio.play();
+			music.pause();
+			music.src = playlist[currentTrack];
+			info.textContent = `Playing ${getFileFromSrc(music.src)}`;
+			music.load();
+			music.play();
 		});
 
 		play.addEventListener("click", () => {
-			audio.play();
-			info.textContent = `Playing ${getSongFromSrc(audio.src)}`;
 			if (!playing) {
-				document.querySelector("#radio-on").load();
-				document.querySelector("#radio-on").play();
+				radioOnSFX.load();
+				radioOnSFX.play();
 			}
+			music.play();
+			info.textContent = `Playing ${getFileFromSrc(music.src)}`;
 			playing = true;
 		});
 
 		pause.addEventListener("click", () => {
-			audio.pause();
-			info.textContent = "Galaxy Radio Paused";
 			if (playing) {
-				document.querySelector("#radio-off").load();
-				document.querySelector("#radio-off").play();
+				radioOffSFX.load();
+				radioOffSFX.play();
 			}
+			music.pause();
+			info.textContent = "Galaxy Radio Paused";
 			playing = false;
 		});
 	});
