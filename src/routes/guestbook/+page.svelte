@@ -1,5 +1,6 @@
 <script>
 	import { onMount } from "svelte";
+	import { formatDate } from "$lib/utils.js";
 
 	export let data;
 
@@ -8,7 +9,7 @@
 
 	onMount(async () => {
 		// AJAX Submit
-		const handleSubmit = (event) => {
+		document.querySelector("form").addEventListener("submit", event => {
 			event.preventDefault();
 
 			const myForm = event.target;
@@ -30,9 +31,7 @@
 				alert(error);
 				submitting = false;
 			});
-		};
-
-		document.querySelector("form").addEventListener("submit", handleSubmit);
+		});
 
 		// Character limit
 		document.querySelector("textarea").addEventListener("input", event => {
@@ -44,12 +43,6 @@
 			charLimit.textContent = `${currentLength} / ${maxLength}`;
 		});
 	});
-
-	function formatDate(date) {
-		let d = new Date(date);
-
-		return d.toLocaleString("en-US");
-	}
 </script>
 
 <h1>+ Guestbook Planet +</h1>

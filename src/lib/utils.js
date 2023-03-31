@@ -14,5 +14,12 @@ export const shuffleArray = (array) => {
 export const getFileFromSrc = (src) => {
 	let start = src.lastIndexOf('/');
 	let end = src.lastIndexOf('.');
+	
 	return src.substring(start + 1, end);
 };
+
+export const formatDate = (date) => {
+	let d = new Date(date);
+
+	return d.toLocaleString("en-US");
+}
