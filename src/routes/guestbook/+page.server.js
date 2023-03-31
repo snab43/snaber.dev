@@ -29,32 +29,3 @@ export const load = () => {
 		}
 	};
 }
-/*
-export const actions = {
-	default: async (event) => {
-		const form = event.target;
-		const formData = new FormData(form);
-		//submitting = true;
-		
-		event.fetch("/guestbook", {
-			method: "POST",
-			headers: { "Content-Type": "application/x-www-form-urlencoded" },
-			body: new URLSearchParams(formData).toString(),
-		})
-		.then(() => {
-			console.log("Form submitted");
-			//success = true;
-			//submitting = false;
-			//form.reset();
-		})
-		.catch((error) => {
-			console.log(error);
-			//submitting = false;
-		});
-
-		return {
-			success: true
-		};
-	}
-};
-*/
