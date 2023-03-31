@@ -1,15 +1,12 @@
 <script>
 	import { formatDate } from "$lib/utils.js";
-	import GuestbookForm from "$lib/GuestbookForm.svelte";
 
 	export let data;
 </script>
 
 <h1>+ Guestbook Planet +</h1>
 <h2>Sign the Galaxybook</h2>
-<p>tell us your story! what galaxy are you coming from?</p>
-
-<GuestbookForm />
+<p>if you would like to sign the galaxybook, please visit the <a href="/guestbook/sign">guestbook signature moon</a>!</p>
 
 <div class="star-row"></div>
 

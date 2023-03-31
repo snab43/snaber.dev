@@ -13,7 +13,7 @@
 			const formData = new FormData(myForm);
 			submitting = true;
 			
-			fetch("/guestbook", {
+			fetch("/guestbook/sign", {
 				method: "POST",
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
 				body: new URLSearchParams(formData).toString(),
@@ -41,6 +41,11 @@
 		});
 	});
 </script>
+
+<h1>+ Guestbook Signature Moon +</h1>
+<h2>Sign the Galaxybook</h2>
+
+<p>use the form below to sign the galaxybook! when you're done, you can see the submissions on the <a href="/guestbook">guestbook planet</a></p>
 
 <div class="form-container">
 	{#if success}
