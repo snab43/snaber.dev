@@ -15,6 +15,10 @@ It's built with [SvelteKit](https://kit.svelte.dev/) and deployed using [Netlify
 
 SvelteKit, Netlify, Netlify Forms.
 
+## Screenshots
+
+![snaber.dev Homepage](https://i.postimg.cc/5yf5gnSM/Capture.png)
+
 ## Acknowledgements
 
 - [svelte-ticker](https://github.com/PaulMaly/svelte-ticker) by [PaulMaly](https://github.com/PaulMaly)
